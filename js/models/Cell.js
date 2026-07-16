@@ -1,0 +1,20 @@
+class Cell {
+
+    //TIPO SIRVE A LA HORA DE SABER COMO RENDERIZAR LA CELDA.
+    //QUIERO QUE DEPENDIENDO DEL TIPO DE CELDA, SE ACRTUALIZE EL ESTABLOQUEADA. QUIERO QUE SI ES POR EJEMPLO UNA ESTANTERIA, NO SE PUEDA CLCKAR PARA COLOCAR AHI EL PERSONAJE.
+
+    constructor() {
+        this.character = null;
+        this.furniture = null;
+        this.floor = null;
+        this.estaBloqueada = false;
+    }
+
+    cloneCell() {
+        const cell = new Cell();
+        cell.furniture = this.furniture;
+        cell.floor = this.floor;
+        return cell;
+    }
+
+}

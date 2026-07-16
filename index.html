@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MURDOKU</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>MURDOKU</h1>
+        </div>
+        <div class="clues-panel">
+            <div class="clues" id="clues">
+                <!-- Las pistas se generarán con JavaScript -->
+            </div>
+        </div>
+
+        <div class="control-panel">
+            <div class="selector-character">
+                <label for="characterContainer">Selecciona un personaje:</label>
+                <div id="characterContainer">
+                    <!-- Las opciones se generarán con JavaScript -->
+                </div>
+            </div>
+           
+            <div class="game-board" id="gameBoard">
+            <!-- El tablero se generará con JavaScript -->
+            </div>
+
+            <input type="text" id="suspectInput" placeholder="Introduce el nombre del asesino">
+            <button id="checkButton">COMPROBAR</button>
+        </div>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
