@@ -1,6 +1,8 @@
 class Floor{
-    constructor(type, image){
-        this.type = type;
-        this.image = image;
+    constructor(id, url){
+        this.id = id;
+        this.url = url;
     }
 }
+
+export default Floor;

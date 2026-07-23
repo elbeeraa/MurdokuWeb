@@ -3,11 +3,13 @@ class Personaje {
     //QUIERO QUE LA IMAGEN SE RENDERICE EN EL TABLERO MEDIO TRANSPARENTE SI SE HA COLOCADO SIN ESTAR FIJA Y SE VEA BIEN SI ESTÁ FIJA.
     //PONER ROW Y COL PARA DEFINIR EN DONDE SE HA COLOCADO EL PERSONAJE PARA A LA HORA DE COMPARAR SI LA ROW Y COL DEL PERSONAJE COINCIDEN CON LA ROW Y COL DE LA ELECCION DEL USUARIO.
 
-    constructor(name, image) {
-        this.nombre = name;
-        this.image = image;
+    constructor(name, url) {
+        this.name = name;
+        this.url = url;
         //FIJADA
         this.fixed = false;
     }
 
 }
+
+export default Personaje;

@@ -1,3 +1,5 @@
+import Puzzle from "./Puzzle.js";
+
 class Game{
 
     //LA PARTIDA VA A CONTENER EL PUZZLE Y EL BOARD DEL JUGADOR. 
@@ -6,7 +8,7 @@ class Game{
 
 
     constructor(puzzles){
-        this.puzzles = this.puzzles;
+        this.puzzles = puzzles;
         this.currentPuzzle = 0;
         this.loadPuzzle();
     }
@@ -21,6 +23,6 @@ class Game{
         this.loadPuzzle();
     }
 
-
-
 }
+export default Game;
+

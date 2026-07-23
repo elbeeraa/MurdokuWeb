@@ -1,3 +1,6 @@
+import Board from "./Board.js";
+import Clue from "./Clue.js";
+
 class Puzzle {
 
     //AQUI TENDRÉ EL TABLERO DE LAS SOLUCIONES Y LAS PISTAS CONCRETAS DE ESE PUZZLE
@@ -32,11 +35,11 @@ class Puzzle {
 
     //ASIGNAR EL SUELO
     loadFloor(layout) {
-        for(let row = 0; row < this.solutionBoard.row; row++){
+        for(let row = 0; row < this.board.row; row++){
 
-            for(let col = 0; col < this.solutionBoard.col; col++){
+            for(let col = 0; col < this.board.col; col++){
 
-                this.solutionBoard
+                this.board
                     .getCell(row,col)
                     .floor = layout[row][col];
 
@@ -46,11 +49,11 @@ class Puzzle {
 
     //ASIGNAR EL MOBILIARIO
     loadFurniture(layout) {
-        for(let row = 0; row < this.solutionBoard.row; row++){
+        for(let row = 0; row < this.board.row; row++){
 
-            for(let col = 0; col < this.solutionBoard.col; col++){
+            for(let col = 0; col < this.board.col; col++){
 
-                this.solutionBoard
+                this.board
                     .getCell(row,col)
                     .furniture = layout[row][col];
 
@@ -58,3 +61,5 @@ class Puzzle {
         }
     }
 }
+
+export default Puzzle;

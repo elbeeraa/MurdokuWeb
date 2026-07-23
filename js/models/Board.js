@@ -1,5 +1,6 @@
 
 //SOLO VA A CONTENER LAS CELDAS
+import Cell from "./Cell.js";
 
 class Board{
 
@@ -39,3 +40,5 @@ class Board{
     }
 
 }        
+
+export default Board;

@@ -4,3 +4,5 @@ class Clue {
         this.text = text;
     }
 }
+
+export default Clue;
