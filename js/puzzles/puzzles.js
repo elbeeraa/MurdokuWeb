@@ -14,8 +14,8 @@ export function createPuzzle1(){
     const floor4 = new Floor('FLOOR-BLUE2', 'img/floors/floor-3-blue.PNG');
 
     //CREAR LOS TIPOS DE MUEBLES
-    const bed1 = new Furniture('bed1', 'img/furniture/bed1.PNG');
-    const bed2 = new Furniture('bed2', 'img/furniture/bed2.PNG');
+    const bed1 = new Furniture('bed1', 'img/furniture/bed-up1.PNG');
+    const bed2 = new Furniture('bed2', 'img/furniture/bed-down1-purple.PNG');
     const table = new Furniture('table', 'img/furniture/table-alone.PNG');
     const plant = new Furniture('plant', 'img/furniture/plant.PNG');
     const rug = new Furniture('rug', 'img/furniture/rug-green.PNG');
@@ -43,11 +43,17 @@ export function createPuzzle1(){
 
 
     //CREAR LOS PERSONAJES
-    const axel = new Personaje('Axel', 'img/characters/axel.png');
-    const bella = new Personaje('Bella', 'img/characters/bella.png');
-    const cora = new Personaje('Cora', 'img/characters/cora.png');
-    const douglas = new Personaje('Doug', 'img/characters/douglas.png');
-    const ella = new Personaje('Ella', 'img/characters/ella.png');
+    const axel = new Personaje('Axel', 'img/characters/axel.PNG');
+    const bella = new Personaje('Bella', 'img/characters/bella.PNG');
+    const cora = new Personaje('Cora', 'img/characters/cora.PNG');
+    const douglas = new Personaje('Doug', 'img/characters/douglas.PNG');
+    const ella = new Personaje('Ella', 'img/characters/ella.PNG');
+
+    puzzle.addCharacter(axel);
+    puzzle.addCharacter(bella);
+    puzzle.addCharacter(cora);
+    puzzle.addCharacter(douglas);
+    puzzle.addCharacter(ella);
 
     puzzle.setMurderer(axel);
 

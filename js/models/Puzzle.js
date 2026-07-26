@@ -24,9 +24,8 @@ class Puzzle {
         this.clues.push(clue);
     }
 
-    addCharacter(nombre, image) {
-        const personaje = new Personaje(nombre, image);
-        this.characters.push(personaje);
+    addCharacter(character) {
+        this.characters.push(character);
     }
 
     // getCharacterByName(nombre) {
