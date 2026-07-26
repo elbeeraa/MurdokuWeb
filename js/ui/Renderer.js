@@ -2,19 +2,46 @@ class Renderer {
     constructor(game) {
         this.game = game;
         this.boardElement = document.getElementById("gameBoard");
+        this.cluesElement = document.getElementById("cluesContainer");
     }
 
     render() {
         this.renderBoard();
+        this.renderClues();
+    }
+
+    renderClues() {
+        this.cluesElement.innerHTML = '';
+
+        const clues = this.game.puzzles[this.game.currentPuzzle].clues;
+
+        clues.forEach(clue => {
+            const clueElement = document.createElement('div');
+            clueElement.className = 'clue';
+            const imagen = document.createElement('img');
+            imagen.className = 'img-clue';
+            imagen.src = clue.character.url;
+            imagen.alt = '';
+            imagen.draggable = false;
+            clueElement.appendChild(imagen);
+
+            const textElement = document.createElement('p');
+            textElement.textContent = clue.text;
+            clueElement.appendChild(textElement);
+            this.cluesElement.appendChild(clueElement);
+          console.log(clue.character.url, clue.text);  
+        });
+
+
     }
 
     renderBoard() {
-        // Limpiar el contenido anterior
+        // limpiar contenido anterior
         this.boardElement.innerHTML = '';
 
         const board = this.game.playerBoard;
         
-        // Crear contenedor de la grid
+        // crear el contenedor
         const gridContainer = document.createElement('div');
         gridContainer.className = `board-grid cols-${board.col}`;
 
