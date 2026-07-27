@@ -158,11 +158,6 @@ class Renderer {
     }
 
     changeStyleOfCell(row, col, value) {
-        // const highlightedCells = [];
-        // this.game.playerBoard.getRowColCells(row, col).forEach(pos => {
-        //     const targetCell = this.game.playerBoard.getCell(pos.row, pos.col);
-        //     highlightedCells.push(targetCell);
-        // });
 
         const highlightedCells = this.game.playerBoard.getRowColCells(row, col);
         console.log(highlightedCells);

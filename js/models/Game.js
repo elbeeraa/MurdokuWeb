@@ -28,6 +28,11 @@ class Game{
         this.loadPuzzle();
     }
 
+    checkMurderer(inputText){
+        const puzzle = this.puzzles[this.currentPuzzle];
+        return puzzle.murderer.name.toLowerCase() === inputText.trim().toLowerCase();
+    }
+
 }
 export default Game;
 
