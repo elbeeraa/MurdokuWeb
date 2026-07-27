@@ -58,11 +58,19 @@ export function createPuzzle1(){
     puzzle.setMurderer(axel);
 
     //AÑADIR LAS PISTAS
-    puzzle.addClue(axel, "I was in front of a window.");
-    puzzle.addClue(bella, "I was in the living room.");
-    puzzle.addClue(cora, "I was over the rug.");
-    puzzle.addClue(douglas, "I was on the bed");
-    puzzle.addClue(ella, "I was in front of a plant.");
+    puzzle.addClue(axel, "Estaba delante de una ventana");
+    puzzle.addClue(bella, "Estaba en la sala de estar");
+    puzzle.addClue(cora, "Estaba sobre la alfombra");
+    puzzle.addClue(douglas, "Estaba sobre la cama");
+    puzzle.addClue(ella, "Estaba junto a una planta");
+
+    //AÑADIR LOS NOMBRES DE LAS HABITACIONES
+    puzzle.addText("SALA", 2, 1);
+    puzzle.addText("DORMITORIO", 2, 4);
+    puzzle.addText("SALON PRINCIPAL", 5, 1);
+    puzzle.addText("COMEDOR", 5, 4);
+
+    
 
     return puzzle;
 }

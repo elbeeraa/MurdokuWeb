@@ -12,10 +12,14 @@ class Cell {
 
     cloneCell() {
         const cell = new Cell();
+        cell.character = this.character;
         cell.furniture = this.furniture;
         cell.floor = this.floor;
+        cell.estaBloqueada = this.estaBloqueada;
         return cell;
     }
+
+    
 
 }
 

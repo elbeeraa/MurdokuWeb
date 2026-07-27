@@ -1,5 +1,6 @@
 import Board from "./Board.js";
 import Clue from "./Clue.js";
+import Text from "./Text.js";
 
 class Puzzle {
 
@@ -10,6 +11,7 @@ class Puzzle {
         this.characters = [];
         this.clues = [];
         this.murderer = null;
+        this.texts = [];
     }
 
     setMurderer(character) {
@@ -27,6 +29,13 @@ class Puzzle {
     addCharacter(character) {
         this.characters.push(character);
     }
+
+    addText(text, row, col) {
+        const textElement = new Text(text, row, col);
+        this.texts.push(textElement);
+    }
+
+    
 
     // getCharacterByName(nombre) {
     //     return this.characters.find(character => character.nombre === nombre);

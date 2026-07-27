@@ -83,6 +83,19 @@ class Renderer {
             cellDiv.appendChild(furnitureImg);
         }
 
+        //Renderizar textos
+        const texts = this.game.puzzles[this.game.currentPuzzle].texts;
+        texts.forEach(text => {
+            if (text.row === row && text.col === col) {
+                const textElement = document.createElement('p');
+                textElement.className = 'cell__text';
+                textElement.textContent = text.text;
+                cellDiv.appendChild(textElement);
+            }
+        });
+
+        
+        
         // Agregar listener para celdas no bloqueadas
         if (!cell.estaBloqueada) {
             cellDiv.addEventListener('click', () => this.handleCellClick(row, col));
