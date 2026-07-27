@@ -10,12 +10,17 @@ class Game{
     constructor(puzzles){
         this.puzzles = puzzles;
         this.currentPuzzle = 0;
+        this.selectedCharacter = null;
         this.loadPuzzle();
     }
 
     loadPuzzle(){
         const puzzle = this.puzzles[this.currentPuzzle];
         this.playerBoard = puzzle.board.cloneBoard();
+    }
+
+    selectCharacter(character){
+        this.selectedCharacter = character;
     }
 
     nextPuzzle(){

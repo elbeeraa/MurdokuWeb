@@ -14,11 +14,11 @@ export function createPuzzle1(){
     const floor4 = new Floor('FLOOR-BLUE2', 'img/floors/floor-3-blue.PNG');
 
     //CREAR LOS TIPOS DE MUEBLES
-    const bed1 = new Furniture('bed1', 'img/furniture/bed-up1.PNG');
-    const bed2 = new Furniture('bed2', 'img/furniture/bed-down1-purple.PNG');
-    const table = new Furniture('table', 'img/furniture/table-alone.PNG');
-    const plant = new Furniture('plant', 'img/furniture/plant.PNG');
-    const rug = new Furniture('rug', 'img/furniture/rug-green.PNG');
+    const bed1 = new Furniture('bed1', 'img/furniture/bed-up1.PNG', true);
+    const bed2 = new Furniture('bed2', 'img/furniture/bed-down1-purple.PNG', true);
+    const table = new Furniture('table', 'img/furniture/table-alone.PNG', false);
+    const plant = new Furniture('plant', 'img/furniture/plant.PNG', false);
+    const rug = new Furniture('rug', 'img/furniture/rug-green.PNG', true);
 
     const floorLayout = [
         [floor1, floor1, floor1, floor2, floor2, floor2],
@@ -59,7 +59,7 @@ export function createPuzzle1(){
 
     //AÑADIR LAS PISTAS
     puzzle.addClue(axel, "Estaba delante de una ventana");
-    puzzle.addClue(bella, "Estaba en la sala de estar");
+    puzzle.addClue(bella, "Estaba en el salon principal");
     puzzle.addClue(cora, "Estaba sobre la alfombra");
     puzzle.addClue(douglas, "Estaba sobre la cama");
     puzzle.addClue(ella, "Estaba junto a una planta");
@@ -69,8 +69,6 @@ export function createPuzzle1(){
     puzzle.addText("DORMITORIO", 2, 4);
     puzzle.addText("SALON PRINCIPAL", 5, 1);
     puzzle.addText("COMEDOR", 5, 4);
-
-   
 
     return puzzle;
 }

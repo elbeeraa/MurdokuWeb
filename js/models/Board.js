@@ -39,6 +39,23 @@ class Board{
         return this.cells[row][col];
     }
 
+
+   getRowColCells(row, col) {
+    const rowColCells = [];
+
+    for (let c = 0; c < this.col; c++) {
+        rowColCells.push({ row, col: c });
+    }
+
+    for (let r = 0; r < this.row; r++) {
+        if (r !== row) {
+            rowColCells.push({ row: r, col });
+        }
+    }
+
+    return rowColCells;
+}
+
 }        
 
 export default Board;

@@ -18,6 +18,20 @@ class Renderer {
         clues.forEach(clue => {
             const clueElement = document.createElement('div');
             clueElement.className = 'clue';
+
+            if (this.game.selectedCharacter?.name === clue.character.name) {
+                clueElement.classList.add('clue--selected');
+            }
+
+            clueElement.addEventListener('click', () => {
+                if(this.game.selectedCharacter?.name === clue.character.name) {
+                    this.game.selectCharacter(null);
+                } else {
+                    this.game.selectCharacter(clue.character);
+                }
+                this.renderClues();
+            });
+
             const imagen = document.createElement('img');
             imagen.className = 'img-clue';
             imagen.src = clue.character.url;
@@ -29,10 +43,7 @@ class Renderer {
             textElement.textContent = clue.text;
             clueElement.appendChild(textElement);
             this.cluesElement.appendChild(clueElement);
-          
         });
-
-
     }
 
     renderBoard() {
@@ -63,6 +74,10 @@ class Renderer {
         cellDiv.setAttribute('data-row', row);
         cellDiv.setAttribute('data-col', col);
 
+        if (cell.highlighted) {
+            cellDiv.classList.add('cell--highlighted');
+        }
+
         // Renderizar floor
         if (cell.floor) {
             const floorImg = document.createElement('img');
@@ -75,12 +90,25 @@ class Renderer {
 
         // Renderizar furniture
         if (cell.furniture) {
+            if(!cell.furniture.available) {
+               cell.estaBloqueada = true; 
+            }
             const furnitureImg = document.createElement('img');
             furnitureImg.className = `cell__layer cell__furniture ${cell.furniture.id}`;
             furnitureImg.src = cell.furniture.url;
             furnitureImg.alt = '';
             furnitureImg.draggable = false;
             cellDiv.appendChild(furnitureImg);
+        }
+
+        // Renderizar character
+        if (cell.character) {
+            const characterImg = document.createElement('img');
+            characterImg.className = `cell__layer cell__character ${cell.character.name}`;
+            characterImg.src = cell.character.url;
+            characterImg.alt = '';
+            characterImg.draggable = false;
+            cellDiv.appendChild(characterImg);
         }
 
         //Renderizar textos
@@ -93,7 +121,7 @@ class Renderer {
                 cellDiv.appendChild(textElement);
             }
         });
-        
+
         // Agregar listener para celdas no bloqueadas
         if (!cell.estaBloqueada) {
             cellDiv.addEventListener('click', () => this.handleCellClick(row, col));
@@ -103,8 +131,46 @@ class Renderer {
     }
 
     handleCellClick(row, col) {
-        // Implementar la lógica cuando se hace click en una celda
-        console.log(`Celda clickeada: ${row}, ${col}`);
+        const cell = this.game.playerBoard.getCell(row, col);
+
+        if (cell.estaBloqueada) {
+            alert("Esta celda está bloqueada. No puedes colocar un personaje aquí.");
+            return;
+        }
+
+        if (!this.game.selectedCharacter) {
+            alert("Selecciona un personaje primero.");
+            return;
+        }
+
+        if (cell.character) {
+            cell.character = null;
+            this.changeStyleOfCell(row, col, false);
+            this.renderBoard();
+            return;
+        } else {
+            cell.character = this.game.selectedCharacter;
+
+            this.changeStyleOfCell(row, col, true);
+        }
+    
+        this.renderBoard();
+    }
+
+    changeStyleOfCell(row, col, value) {
+        // const highlightedCells = [];
+        // this.game.playerBoard.getRowColCells(row, col).forEach(pos => {
+        //     const targetCell = this.game.playerBoard.getCell(pos.row, pos.col);
+        //     highlightedCells.push(targetCell);
+        // });
+
+        const highlightedCells = this.game.playerBoard.getRowColCells(row, col);
+        console.log(highlightedCells);
+
+        for (const pos of highlightedCells) {
+            const cell = this.game.playerBoard.getCell(pos.row, pos.col);
+            cell.highlighted = value;
+        }
     }
 }
 
