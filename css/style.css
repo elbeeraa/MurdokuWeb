@@ -133,3 +133,35 @@ body {
     border-radius: 20px;
 }
 
+.form-control { 
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    max-width: 100%;
+    align-items: stretch;
+}
+
+.input-group > * {
+    flex: 1 1 0;
+}
+
+.input-group button {
+    flex: 0 0 auto;
+    border-radius: 10px;
+    background-color: #92c1f3;
+    padding: 8px 12px;
+    min-width: 90px;
+    width: auto;
+}
+
+.control-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+

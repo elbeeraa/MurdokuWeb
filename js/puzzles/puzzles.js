@@ -70,7 +70,7 @@ export function createPuzzle1(){
     puzzle.addText("SALON PRINCIPAL", 5, 1);
     puzzle.addText("COMEDOR", 5, 4);
 
-    
+   
 
     return puzzle;
 }

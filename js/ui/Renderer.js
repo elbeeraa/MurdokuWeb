@@ -29,7 +29,7 @@ class Renderer {
             textElement.textContent = clue.text;
             clueElement.appendChild(textElement);
             this.cluesElement.appendChild(clueElement);
-          console.log(clue.character.url, clue.text);  
+          
         });
 
 
@@ -93,8 +93,6 @@ class Renderer {
                 cellDiv.appendChild(textElement);
             }
         });
-
-        
         
         // Agregar listener para celdas no bloqueadas
         if (!cell.estaBloqueada) {

@@ -35,7 +35,6 @@ class Puzzle {
         this.texts.push(textElement);
     }
 
-    
 
     // getCharacterByName(nombre) {
     //     return this.characters.find(character => character.nombre === nombre);

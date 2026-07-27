@@ -8,6 +8,7 @@ class Cell {
         this.furniture = null;
         this.floor = null;
         this.estaBloqueada = false;
+        
     }
 
     cloneCell() {
@@ -16,6 +17,7 @@ class Cell {
         cell.furniture = this.furniture;
         cell.floor = this.floor;
         cell.estaBloqueada = this.estaBloqueada;
+        
         return cell;
     }
 
