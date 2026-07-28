@@ -14,11 +14,13 @@ export function createPuzzle1(){
     const floor4 = new Floor('FLOOR-BLUE2', 'img/floors/floor-3-blue.PNG');
 
     //CREAR LOS TIPOS DE MUEBLES
+    //TRUE SI SE PUEDE COLOCAR PERSONAJE
     const bed1 = new Furniture('bed1', 'img/furniture/bed-up1.PNG', true);
     const bed2 = new Furniture('bed2', 'img/furniture/bed-down1-purple.PNG', true);
     const table = new Furniture('table', 'img/furniture/table-alone.PNG', false);
     const plant = new Furniture('plant', 'img/furniture/plant.PNG', false);
     const rug = new Furniture('rug', 'img/furniture/rug-green.PNG', true);
+    const window = new Furniture('window', 'img/furniture/window-up.PNG', true);
 
     const floorLayout = [
         [floor1, floor1, floor1, floor2, floor2, floor2],
@@ -30,7 +32,7 @@ export function createPuzzle1(){
     ];
 
     const furnitureLayout = [
-        [null, null, null, null, null, null],
+        [null, window, null, null, window, null],
         [null, null, rug, null, bed1, null],
         [null, null, null, null, bed2, null],
         [table, null, null, null, null, table],
@@ -46,7 +48,7 @@ export function createPuzzle1(){
     const axel = new Personaje('Axel', 'img/characters/axel.PNG');
     const bella = new Personaje('Bella', 'img/characters/bella.PNG');
     const cora = new Personaje('Cora', 'img/characters/cora.PNG');
-    const douglas = new Personaje('Doug', 'img/characters/douglas.PNG');
+    const douglas = new Personaje('Douglas', 'img/characters/douglas.PNG');
     const ella = new Personaje('Ella', 'img/characters/ella.PNG');
 
     puzzle.addCharacter(axel);

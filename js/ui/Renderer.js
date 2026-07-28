@@ -33,7 +33,7 @@ class Renderer {
             });
 
             const imagen = document.createElement('img');
-            imagen.className = 'img-clue';
+            imagen.className = 'img-clue '+ clue.character.name.toLowerCase();
             imagen.src = clue.character.url;
             imagen.alt = '';
             imagen.draggable = false;

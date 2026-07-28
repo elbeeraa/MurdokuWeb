@@ -163,7 +163,7 @@ body {
 
 .cell__character {
     object-fit: contain;
-    z-index: 4;
+    z-index: 6;
 }
 
 .cell__text {
@@ -179,7 +179,7 @@ body {
     font-size: 0.8rem;
     line-height: 1.2;
     text-align: center;
-    z-index: 6;
+    z-index: 7;
     overflow: visible;
     white-space: nowrap;
     max-height: none;
@@ -252,3 +252,24 @@ body {
     gap: 10px;
 }
 
+/* CHARACTERS */
+
+.axel {
+    background: #60380a;
+}
+
+.bella {
+    background: #065c10;
+}
+
+.cora {
+    background: #1794c6;
+}
+
+.douglas {
+    background: #7519a3;
+}
+
+.ella {
+    background: #c6a617;
+}

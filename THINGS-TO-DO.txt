@@ -3,7 +3,7 @@ PROBLEMAS A RESOLVER
 
 - CUANDO QUITAS UN PERSONAJE Y HAY OTRO AL LADO, LE QUITA LAS CELDAS OSCURAS
 
-
+-poner el nombre de los personajes en las pistas
 -poner imagenes de los personajes sin fondo para el tablero
 -hacer las ventanas
 -hacer la libreria
