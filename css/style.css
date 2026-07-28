@@ -42,6 +42,10 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.18);
     box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
     backdrop-filter: blur(12px);
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .start-screen__card h1 {
@@ -57,7 +61,7 @@ body {
     margin-bottom: 24px;
 }
 
-.start-screen__button {
+.btn-primary {
     min-width: 180px;
     padding: 14px 22px;
     border: none;
@@ -210,6 +214,12 @@ body {
     border-color: #1e88e5;
     border-width: 3px;
     background: #e3f2fd;
+}
+
+.clue__character {
+    font-weight: bold;
+    margin-bottom: 7px;
+    text-transform: uppercase;
 }
 
 .img-clue {

@@ -39,9 +39,20 @@ class Renderer {
             imagen.draggable = false;
             clueElement.appendChild(imagen);
 
-            const textElement = document.createElement('p');
-            textElement.textContent = clue.text;
-            clueElement.appendChild(textElement);
+            const groupTextElement = document.createElement('div');
+            groupTextElement.className = 'clue__text';
+
+            const textCharacter = document.createElement('p');
+            textCharacter.className = 'clue__character';
+            textCharacter.textContent = clue.character.name;
+            groupTextElement.appendChild(textCharacter); 
+
+            const textClue = document.createElement('p');
+            textClue.textContent = clue.text;
+            groupTextElement.appendChild(textClue);
+
+            clueElement.appendChild(groupTextElement); 
+
             this.cluesElement.appendChild(clueElement);
         });
     }

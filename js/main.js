@@ -8,6 +8,8 @@ const renderer = new Renderer(game);
 const startScreen = document.getElementById("startScreen");
 const startButton = document.getElementById("startButton");
 const gameContainer = document.getElementById("gameContainer");
+const tutorialScreen = document.getElementById("tutorialScreen");
+const tutorialButton = document.getElementById("tutorialButton");
 
 const input = document.getElementById("suspectInput");
 const button = document.getElementById("checkButton");
@@ -16,6 +18,11 @@ startButton.addEventListener("click", () => {
     startScreen.classList.add("is-hidden");
     gameContainer.classList.remove("is-hidden");
     renderer.render();
+});
+
+tutorialButton.addEventListener("click", () => {
+    startScreen.classList.add("is-hidden");
+    tutorialScreen.classList.remove("is-hidden");
 });
 
 button.addEventListener("click", () => {
