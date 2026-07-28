@@ -7,24 +7,34 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <div class="start-screen" id="startScreen">
+        <div class="start-screen__card">
+            <h1>MURDOKU</h1>
+            <p>Resuelve el primer caso para descubrir al asesino.</p>
+            <button class="btn btn-primary start-screen__button" id="startButton">JUGAR</button>
+        </div>
+    </div>
     <div class="header">
         <h1>MURDOKU</h1>
     </div>
-    <div class="container">
-        <div class="clues-panel">
-            <div class="clues" id="cluesContainer">
+    <div class="container is-hidden" id="gameContainer">
+        <p class="principal-text" id="principalText">Bienvenido al juego MURDOKU. Resuelve los acertijos y descubre al asesino.</p>
+        <div class="game-container">
+            <div class="clues-panel">
+                <div class="clues" id="cluesContainer">
                 <!-- Las pistas se generarán con JavaScript -->
+                </div>
             </div>
-        </div>
 
-        <div class="control-panel">
+            <div class="control-panel">
            
-            <div class="game-board" id="gameBoard">
-            <!-- El tablero se generará con JavaScript -->
-            </div>
-            <div class="input-group">   
-                <input class="form-control" type="text" id="suspectInput" placeholder="Introduce el nombre del asesino">
-                <button class="btn btn-primary" id="checkButton">COMPROBAR</button>
+                <div class="game-board" id="gameBoard">
+                    <!-- El tablero se generará con JavaScript -->
+                </div>
+                <div class="input-group">   
+                    <input class="form-control" type="text" id="suspectInput" placeholder="Introduce el nombre del asesino">
+                    <button class="btn btn-primary" id="checkButton">COMPROBAR</button>
+                </div>
             </div>
         </div>
     </div>

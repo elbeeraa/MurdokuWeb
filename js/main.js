@@ -5,10 +5,18 @@ import Game from "./models/Game.js";
 const game = new Game(puzzles);
 const renderer = new Renderer(game);
 
-renderer.render();
+const startScreen = document.getElementById("startScreen");
+const startButton = document.getElementById("startButton");
+const gameContainer = document.getElementById("gameContainer");
 
 const input = document.getElementById("suspectInput");
 const button = document.getElementById("checkButton");
+
+startButton.addEventListener("click", () => {
+    startScreen.classList.add("is-hidden");
+    gameContainer.classList.remove("is-hidden");
+    renderer.render();
+});
 
 button.addEventListener("click", () => {
     const textoIntroducido = input.value.trim();
@@ -18,13 +26,14 @@ button.addEventListener("click", () => {
     );
 
     if (!esPersonajeValido) {
-        alert("Tiene que introducir un texto válido.");
+        renderer.changePrincipalText("Tiene que introducir un texto válido.");
         return;
     }
     const esCorrecto = game.checkMurderer(textoIntroducido);
     if (esCorrecto) {
-        alert("¡Correcto! Has descubierto al asesino.");
+        renderer.changePrincipalText("¡Correcto! Has descubierto al asesino.");
+        
     } else {
-        alert("No es el asesino correcto.");
+        renderer.changePrincipalText("Incorrecto. Inténtalo de nuevo.");
     }
 });

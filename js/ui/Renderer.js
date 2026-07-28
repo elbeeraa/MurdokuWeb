@@ -134,12 +134,12 @@ class Renderer {
         const cell = this.game.playerBoard.getCell(row, col);
 
         if (cell.estaBloqueada) {
-            alert("Esta celda está bloqueada. No puedes colocar un personaje aquí.");
+            this.changePrincipalText("Esta celda está bloqueada. No puedes colocar un personaje aquí.");
             return;
         }
 
         if (!this.game.selectedCharacter) {
-            alert("Selecciona un personaje primero.");
+            this.changePrincipalText("Selecciona un personaje antes de colocar uno en el tablero.");
             return;
         }
 
@@ -166,6 +166,11 @@ class Renderer {
             const cell = this.game.playerBoard.getCell(pos.row, pos.col);
             cell.highlighted = value;
         }
+    }
+    
+    changePrincipalText(text) {
+        const principalTextElement = document.getElementById('principalText');
+        principalTextElement.textContent = text;
     }
 }
 
