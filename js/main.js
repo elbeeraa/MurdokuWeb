@@ -14,6 +14,7 @@ const tutorialButton = document.getElementById("tutorialButton");
 const input = document.getElementById("suspectInput");
 
 const checkButton = document.getElementById("checkButton");
+const resetButton = document.getElementById("resetButton");
 const nextPuzzleButton = document.getElementById("nextPuzzleButton");
 
 const showStartScreen = () => {
@@ -61,6 +62,7 @@ checkButton.addEventListener("click", () => {
         nextPuzzleButton.classList.remove("is-hidden");
         input.classList.add("is-hidden");
         checkButton.classList.add("is-hidden");
+        resetButton.classList.remove("is-hidden");
         
     } else {
         renderer.changePrincipalText("Incorrecto. Inténtalo de nuevo.");
