@@ -1,0 +1,69 @@
+<div class="tutorial-screen__card">
+    <h2>Bienvenido, detective!</h2>
+    <p>Tu objetivo es identificar al asesino averiguando quién estaba en la misma habitación que la víctima.</p>
+    <h2>Resumen</h2>
+    <p>Localiza a todos los sospechosos a partir de las pistas y las siguientes reglas:</p>
+    <ul>
+        <li>Cada persona se hallaba en una fila y columna diferentes.</li>
+        <li>Camas, sillas y alfombras son los únicos objetos que pueden estar ocupados por alguien.</li>
+        <li>Las víctimas se encuentran en la última casilla disponible. Quienquiera que estuviera en la misma habitación que la víctima es el asesino.</li>
+    </ul>
+</div>
+<div class="tutorial-screen__card">
+    <h2>Paso a paso</h2>
+    <p>Aquí tienes un ejemplo. Este caso presenta 3 sospechosos. Hay que colocarlos a todos en esta escena del crimen 4x4 con dos habitaciones.</p>
+    <img src="img/tutorial/tutorial-1.PNG" alt="Tutorial" class="img-tutorial">
+</div>
+<div class="tutorial-screen__card yellow-card">
+    <p><b>NOTA:</b> la clave "junto a" quiere decir arriba, abajo, izquierda o derecha de algo, y que está en la misma habitación.</p>
+    <img src="img/tutorial/tutorial-2.PNG" alt="Tutorial" class="img-tutorial small">
+</div>
+<div class="tutorial-screen__card">
+   <h2>Ahora, examinemos las pistas.</h2>
+   <p><b>1.</b>Según las pistas, Liz, Alison y Garret pueden estar en cualquiera de estas casillas: </p>
+   <img src="img/tutorial/tutorial-3.PNG" alt="Tutorial" class="img-tutorial">
+</div>
+<div class="tutorial-screen__card yellow-card">
+    <p><b>IMPORTANTE!</b> Cada persona estaba en una columna y en una fila diferentes.</p>
+    <div class="divided">
+        <div class="column">
+            <img src="img/tutorial/tutorial-4.PNG" alt="Tutorial" class="img-tutorial small">
+            <p>Si A está ahí...</p>
+        </div>
+        <div class="column">
+            <img src="img/tutorial/tutorial-5.PNG" alt="Tutorial" class="img-tutorial small">
+            <p>...entonces nadie más puede estar en esas casillas.</p>
+        </div>
+    </div>
+</div>
+<div class="tutorial-screen__card divided">
+    <div class="column">
+        <img src="img/tutorial/tutorial-6.PNG" alt="Tutorial" class="img-tutorial medium">
+        <p><b>2. </b>Sólo hay una casilla donde puede estar Liz, así que podemos bloquear el resto de casillas de su fila y columna.</p>    
+    </div>
+    <div class="column">
+        <img src="img/tutorial/tutorial-7.PNG" alt="Tutorial" class="img-tutorial medium">
+        <p><b>3. </b>Esto nos permite ubicar la posición de Garret en la última casilla de la cama disponible.</p>
+    </div>
+</div>
+<div class="tutorial-screen__card divided">
+    <div class="column">
+        <img src="img/tutorial/tutorial-8.PNG" alt="Tutorial" class="img-tutorial medium">
+        <p><b>4. </b>Despues de hallar a Garret, bloqueamos su fila y su columna. Eso deja solo una casilla junto a la mesa para Alison.</p>    
+    </div>
+    <div class="column">
+        <img src="img/tutorial/tutorial-9.PNG" alt="Tutorial" class="img-tutorial medium">
+        <p><b>5. </b>La víctima está siempre en la última casilla libre.</p>
+    </div>
+</div>  
+<div class="tutorial-screen__card">
+    <h2>Finalmente, vamos a identificar al asesino.</h2>
+    <div class="divided">
+        <img src="img/tutorial/tutorial-10.PNG" alt="Tutorial" class="img-tutorial medium">
+        <p>La víctima está en la última casilla libre, y Garret estaba en la misma habitación que ella. Por lo tanto, <b>GARRET ES EL ASESINO.</b></p>
+    </div>
+</div>
+<div class="divided">
+    <button class="btn-primary" id="backButton">VOLVER</button>
+    <button class="btn-primary" id="tutorialStartButton">JUGAR</button>
+</div>

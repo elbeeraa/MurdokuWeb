@@ -12,12 +12,31 @@ const tutorialScreen = document.getElementById("tutorialScreen");
 const tutorialButton = document.getElementById("tutorialButton");
 
 const input = document.getElementById("suspectInput");
-const button = document.getElementById("checkButton");
 
-startButton.addEventListener("click", () => {
+const checkButton = document.getElementById("checkButton");
+const nextPuzzleButton = document.getElementById("nextPuzzleButton");
+
+const showStartScreen = () => {
+    gameContainer.classList.add("is-hidden");
+    tutorialScreen.classList.add("is-hidden");
+    startScreen.classList.remove("is-hidden");
+};
+
+const showGameScreen = () => {
     startScreen.classList.add("is-hidden");
+    tutorialScreen.classList.add("is-hidden");
     gameContainer.classList.remove("is-hidden");
     renderer.render();
+};
+
+const loadTutorialScreen = async () => {
+    const response = await fetch("tutorial-screen.html");
+    const tutorialMarkup = await response.text();
+    tutorialScreen.innerHTML = tutorialMarkup;
+};
+
+startButton.addEventListener("click", () => {
+    showGameScreen();
 });
 
 tutorialButton.addEventListener("click", () => {
@@ -25,7 +44,7 @@ tutorialButton.addEventListener("click", () => {
     tutorialScreen.classList.remove("is-hidden");
 });
 
-button.addEventListener("click", () => {
+checkButton.addEventListener("click", () => {
     const textoIntroducido = input.value.trim();
     const characters = game.puzzles[game.currentPuzzle].characters;
     const esPersonajeValido = characters.some(character => 
@@ -39,8 +58,31 @@ button.addEventListener("click", () => {
     const esCorrecto = game.checkMurderer(textoIntroducido);
     if (esCorrecto) {
         renderer.changePrincipalText("¡Correcto! Has descubierto al asesino.");
+        nextPuzzleButton.classList.remove("is-hidden");
+        input.classList.add("is-hidden");
+        checkButton.classList.add("is-hidden");
         
     } else {
         renderer.changePrincipalText("Incorrecto. Inténtalo de nuevo.");
     }
 });
+
+loadTutorialScreen().then(() => {
+    const backButton = document.getElementById("backButton");
+    const tutorialStartButton = document.getElementById("tutorialStartButton");
+
+    backButton.addEventListener("click", () => {
+        showStartScreen();
+    });
+
+    tutorialStartButton.addEventListener("click", () => {
+        showGameScreen();
+    });
+});
+
+//HACER ESTE LISTENER CUANDO TENGA PARA CARGAR MÁS PUZZLES
+
+// nextPuzzleButton.addEventListener("click", () => {
+//     game.nextPuzzle();
+//     renderer.render();
+// });

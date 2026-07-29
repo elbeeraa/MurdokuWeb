@@ -6,7 +6,6 @@ class Game{
     // EL PUZZLE -> Va a servir para enseñar las pistas concretas de ese puzzle y luego validar las colocaciones de los personajes que ponga el jugador.
     // EL BOARD DEL JUGADOR -> Va a contener las celdas donde el jugador va a colocar los personajes. Va a ser un tablero vacío al principio y se irá llenando según el jugador vaya colocando los personajes.
 
-
     constructor(puzzles){
         this.puzzles = puzzles;
         this.currentPuzzle = 0;

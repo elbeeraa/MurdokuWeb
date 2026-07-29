@@ -10,7 +10,7 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -59,6 +59,92 @@ body {
     line-height: 1.6;
     color: rgba(248, 250, 252, 0.88);
     margin-bottom: 24px;
+}
+
+/* TUTORIAL */
+
+.tutorial-screen {
+    /* position: fixed;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+    
+    z-index: 50; */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.tutorial-screen__card {
+    width: min(100%, 700px);
+    padding: 25px;
+    border-radius: 24px;
+    text-align: center;
+    color: #000000;
+    background: rgba(71, 118, 227, 0.72);
+    box-shadow: 0 10px 2px rgb(30, 99, 184);
+    backdrop-filter: blur(12px);
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.tutorial-screen__card li {
+    text-align: left;
+}
+
+.yellow-card{
+    background: rgb(235, 182, 7);
+    box-shadow: 0 10px 2px rgb(188, 124, 6);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    text-align: left;
+    padding: 20px;
+}
+
+.img-tutorial {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.small{
+   width: 100px;
+    flex-shrink: 0;
+    margin-left: auto;
+}
+
+.medium {
+    width: 250px;
+    /* flex-shrink: 0; */
+    /* margin-left: auto; */
+}
+
+.divided {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 1;
+    align-items: center;
+}
+
+.yellow-card p {
+     flex: 1;
+     text-align: left;
 }
 
 .btn-primary {
@@ -241,6 +327,7 @@ body {
     width: 100%;
     max-width: 100%;
     align-items: stretch;
+    justify-content: center;
 }
 
 .input-group > * {

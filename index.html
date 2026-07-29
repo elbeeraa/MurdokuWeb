@@ -15,22 +15,8 @@
             <button class="btn-primary tutorial__button" id="tutorialButton">TUTORIAL</button>
         </div>
     </div>
-    <div class="header">
-        <h1>MURDOKU</h1>
-    </div>
     <div class="tutorial-screen is-hidden" id="tutorialScreen">
-        <div class="tutorial-screen__card">
-            <h1>TUTORIAL</h1>
-            <p>En MURDOKU, tu objetivo es descubrir al asesino resolviendo acertijos. Cada acertijo te proporcionará pistas sobre los personajes involucrados en el caso. Utiliza estas pistas para deducir quién es el culpable.</p>
-            <p>Para jugar:</p>
-            <ol>
-                <li>Lee las pistas cuidadosamente.</li>
-                <li>Observa los personajes y sus características.</li>
-                <li>Introduce el nombre del sospechoso en el campo de texto.</li>
-                <li>Haz clic en "COMPROBAR" para verificar tu respuesta.</li>
-            </ol>
-            <button class="btn-primary tutorial__button" id="backButton">VOLVER</button>
-        </div>
+        <!-- Contenido del tutorial -->
     </div>
     <div class="container is-hidden" id="gameContainer">
         <p class="principal-text" id="principalText">Bienvenido al juego MURDOKU. Resuelve los acertijos y descubre al asesino.</p>
@@ -46,11 +32,12 @@
                 <div class="game-board" id="gameBoard">
                     <!-- El tablero se generará con JavaScript -->
                 </div>
-                <div class="input-group">   
-                    <input class="form-control" type="text" id="suspectInput" placeholder="Introduce el nombre del asesino">
-                    <button class="btn-primary" id="checkButton">COMPROBAR</button>
-                </div>
             </div>
+        </div>
+        <div class="input-group">   
+            <input class="form-control" type="text" id="suspectInput" placeholder="Introduce el nombre del asesino">
+            <button class="btn-primary" id="checkButton">COMPROBAR</button>
+            <button class="btn-primary is-hidden" id="nextPuzzleButton">SIGUIENTE PUZZLE</button>
         </div>
     </div>
 
