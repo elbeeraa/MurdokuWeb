@@ -4,12 +4,14 @@ class Renderer {
         this.boardElement = document.getElementById("gameBoard");
         this.cluesElement = document.getElementById("cluesContainer");
         this.titleTextElement = document.getElementById("titleText");
+        this.principalTextElement = document.getElementById("principalText");
     }
 
     render() {
         this.renderBoard();
         this.renderClues();
         this.titleTextElement.textContent = this.game.puzzles[this.game.currentPuzzle].title;
+        this.changePrincipalText(" ");
     }
 
     renderClues() {

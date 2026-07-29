@@ -84,7 +84,7 @@ loadTutorialScreen().then(() => {
 
 //HACER ESTE LISTENER CUANDO TENGA PARA CARGAR MÁS PUZZLES
 
-// nextPuzzleButton.addEventListener("click", () => {
-//     game.nextPuzzle();
-//     renderer.render();
-// });
+nextPuzzleButton.addEventListener("click", () => {
+    game.nextPuzzle();
+    renderer.render();
+});

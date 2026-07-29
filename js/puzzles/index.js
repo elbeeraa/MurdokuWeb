@@ -1,6 +1,7 @@
-import { createPuzzle1 } from "./puzzles.js";
+import { puzzle_0, puzzle_1 } from "./puzzles.js";
 
 
 export const puzzles = [
-    createPuzzle1()
+    puzzle_0(),
+    puzzle_1()
 ];
