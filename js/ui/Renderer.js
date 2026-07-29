@@ -3,11 +3,13 @@ class Renderer {
         this.game = game;
         this.boardElement = document.getElementById("gameBoard");
         this.cluesElement = document.getElementById("cluesContainer");
+        this.titleTextElement = document.getElementById("titleText");
     }
 
     render() {
         this.renderBoard();
         this.renderClues();
+        this.titleTextElement.textContent = this.game.puzzles[this.game.currentPuzzle].title;
     }
 
     renderClues() {

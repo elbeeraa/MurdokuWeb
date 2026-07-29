@@ -6,12 +6,13 @@ class Puzzle {
 
     //AQUI TENDRÉ EL TABLERO DE LAS SOLUCIONES Y LAS PISTAS CONCRETAS DE ESE PUZZLE
 
-    constructor(row, col) {
+    constructor(row, col, title) {
         this.board = new Board(row, col);
         this.characters = [];
         this.clues = [];
         this.murderer = null;
         this.texts = [];
+        this.title = title;
     }
 
     setMurderer(character) {

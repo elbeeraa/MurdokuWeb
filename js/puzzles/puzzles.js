@@ -5,7 +5,7 @@ import Personaje from "../models/Character.js";
 
 export function createPuzzle1(){
     //CREACION DEL TAMAÑO DEL PUZZLE
-    const puzzle = new Puzzle(6, 6);
+    const puzzle = new Puzzle(6, 6, "1. Tu primer caso");
 
     //CREAR LOS TIPOS DE SUELO
     const floor1 = new Floor('FLOOR-BLUE', 'img/floors/floor-1-blue.PNG');
