@@ -54,6 +54,7 @@ checkButton.addEventListener("click", () => {
 
     if (!esPersonajeValido) {
         renderer.changePrincipalText("Tiene que introducir un texto válido.");
+        input.value = "";
         return;
     }
     const esCorrecto = game.checkMurderer(textoIntroducido);
@@ -66,6 +67,7 @@ checkButton.addEventListener("click", () => {
         
     } else {
         renderer.changePrincipalText("Incorrecto. Inténtalo de nuevo.");
+        input.value = "";
     }
 });
 
@@ -86,5 +88,10 @@ loadTutorialScreen().then(() => {
 
 nextPuzzleButton.addEventListener("click", () => {
     game.nextPuzzle();
+    nextPuzzleButton.classList.add("is-hidden");
+    input.classList.remove("is-hidden");
+    input.value = "";
+    checkButton.classList.remove("is-hidden");
+    resetButton.classList.add("is-hidden");
     renderer.render();
 });
