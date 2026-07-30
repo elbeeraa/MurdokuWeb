@@ -46,12 +46,11 @@ body {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    align-items: center;
 }
 
-.start-screen__card h1 {
-    font-size: clamp(2.6rem, 8vw, 5rem);
-    letter-spacing: 0.12em;
-    margin-bottom: 12px;
+.start-screen__card img {
+    width: 500px;
 }
 
 .start-screen__card p {

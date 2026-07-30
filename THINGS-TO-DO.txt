@@ -4,10 +4,11 @@ PROBLEMAS A RESOLVER:
 -> QUIERO IGUAL CREAR BORDES MAS GORDOS PARA SEPARAR LAS HABITACIONES
 
 -cambiar estilo de la pantalla de inicio. 
--Añadir pantalla de tutorial
 -Añadir boton de volver en el juego.
 -Al introducir asesino que se pueda dar a enter y que funcione
--Al introducir que se quede en blanco el input
+- Mirar alguna fuente que le vaya bien a la estetica del juego
+
 
 -> PONER UN CHECK CONTINUO DE QUE SI SOLO SE QUEDA UNA CELDA SIN ESTAR OSCURA, SE LE PONGA EL CADAVER?
 -> PONER LOS DIFERENTES NIVELES ABAJO.   PONER SOLO LOS QUE VAS DESBLOQUEANDO O TODOS?  CUANDO LE DAS CLICK TE CARGA ESE PUZZLE
+-Añadir una forma de que guarde el puzzle en el que te has quedado
