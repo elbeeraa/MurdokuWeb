@@ -61,6 +61,7 @@ class Renderer {
         });
     }
 
+
     renderBoard() {
         // limpiar contenido anterior
         this.boardElement.innerHTML = '';
