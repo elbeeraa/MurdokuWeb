@@ -9,6 +9,7 @@ class Cell {
         this.floor = null;
         this.estaBloqueada = false;
         this.highlighted = false;
+        this.counter = 0;
     }
 
     cloneCell() {
@@ -18,6 +19,7 @@ class Cell {
         cell.floor = this.floor;
         cell.estaBloqueada = this.estaBloqueada;
         cell.highlighted = this.highlighted;
+        cell.counter = 0;
         
         return cell;
     }

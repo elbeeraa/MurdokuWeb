@@ -176,11 +176,19 @@ class Renderer {
     changeStyleOfCell(row, col, value) {
 
         const highlightedCells = this.game.playerBoard.getRowColCells(row, col);
-        console.log(highlightedCells);
 
         for (const pos of highlightedCells) {
             const cell = this.game.playerBoard.getCell(pos.row, pos.col);
-            cell.highlighted = value;
+            if(value == false) {
+                cell.counter--;
+                if(cell.counter == 0) {
+                    cell.highlighted = value;
+                }
+            }
+            if(value == true) {
+                cell.counter++;
+                cell.highlighted = value;
+            }
         }
     }
     
