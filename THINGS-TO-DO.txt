@@ -5,8 +5,6 @@ PROBLEMAS A RESOLVER:
 -cambiar estilo de la pantalla de inicio. 
 -Añadir boton de volver en el juego.
 -Al introducir asesino que se pueda dar a enter y que funcione
-- Mirar alguna fuente que le vaya bien a la estetica del juego
-
 
 -> PONER UN CHECK CONTINUO DE QUE SI SOLO SE QUEDA UNA CELDA SIN ESTAR OSCURA, SE LE PONGA EL CADAVER?
 -> PONER LOS DIFERENTES NIVELES ABAJO.   PONER SOLO LOS QUE VAS DESBLOQUEANDO O TODOS?  CUANDO LE DAS CLICK TE CARGA ESE PUZZLE

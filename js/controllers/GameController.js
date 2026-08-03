@@ -11,8 +11,10 @@ class GameController {
             input: document.getElementById("suspectInput"),
             checkButton: document.getElementById("checkButton"),
             resetButton: document.getElementById("resetButton"),
-            nextPuzzleButton: document.getElementById("nextPuzzleButton")
+            nextPuzzleButton: document.getElementById("nextPuzzleButton"),
+            gameBackButton: document.getElementById("gameBackButton")
         };
+        this.isPuzzleSolved = false;
     }
 
     init() {
@@ -22,6 +24,7 @@ class GameController {
 
     bindMainEvents() {
         this.elements.startButton.addEventListener("click", () => {
+            this.resetPuzzleUI();
             this.showGameScreen();
         });
 
@@ -37,6 +40,16 @@ class GameController {
         this.elements.nextPuzzleButton.addEventListener("click", () => {
             this.handleNextPuzzle();
         });
+
+        this.elements.resetButton.addEventListener("click", () => {
+            this.handleResetPuzzle();
+        });
+
+        if (this.elements.gameBackButton) {
+            this.elements.gameBackButton.addEventListener("click", () => {
+                this.handleBackToMenu();
+            });
+        }
     }
 
     bindTutorialEvents() {
@@ -45,7 +58,7 @@ class GameController {
 
         if (backButton) {
             backButton.addEventListener("click", () => {
-                this.showStartScreen();
+                this.handleBackToMenu();
             });
         }
 
@@ -69,11 +82,26 @@ class GameController {
         this.elements.startScreen.classList.remove("is-hidden");
     }
 
+    handleBackToMenu() {
+        this.isPuzzleSolved = false;
+        this.resetPuzzleUI();
+        this.showStartScreen();
+    }
+
     showGameScreen() {
         this.elements.startScreen.classList.add("is-hidden");
         this.elements.tutorialScreen.classList.add("is-hidden");
         this.elements.gameContainer.classList.remove("is-hidden");
         this.renderer.render();
+    }
+
+    resetPuzzleUI() {
+        this.elements.nextPuzzleButton.classList.add("is-hidden");
+        this.elements.input.classList.remove("is-hidden");
+        this.elements.input.value = "";
+        this.elements.checkButton.classList.remove("is-hidden");
+        this.elements.resetButton.classList.remove("is-hidden");
+        this.renderer.changePrincipalText(" ");
     }
 
     handleCheck() {
@@ -92,11 +120,12 @@ class GameController {
         const esCorrecto = this.game.checkMurderer(textoIntroducido);
 
         if (esCorrecto) {
+            this.isPuzzleSolved = true;
             this.renderer.changePrincipalText("¡Correcto! Has descubierto al asesino.");
             this.elements.nextPuzzleButton.classList.remove("is-hidden");
             this.elements.input.classList.add("is-hidden");
             this.elements.checkButton.classList.add("is-hidden");
-            this.elements.resetButton.classList.remove("is-hidden");
+            // this.elements.resetButton.classList.remove("is-hidden");
         } else {
             this.renderer.changePrincipalText("Incorrecto. Inténtalo de nuevo.");
             this.elements.input.value = "";
@@ -105,11 +134,13 @@ class GameController {
 
     handleNextPuzzle() {
         this.game.nextPuzzle();
-        this.elements.nextPuzzleButton.classList.add("is-hidden");
-        this.elements.input.classList.remove("is-hidden");
-        this.elements.input.value = "";
-        this.elements.checkButton.classList.remove("is-hidden");
-        this.elements.resetButton.classList.add("is-hidden");
+        this.resetPuzzleUI();
+        this.renderer.render();
+    }
+
+    handleResetPuzzle() {
+        this.game.resetCurrentPuzzle();
+        this.resetPuzzleUI();
         this.renderer.render();
     }
 }

@@ -22,6 +22,11 @@ class Game{
         this.selectedCharacter = character;
     }
 
+    resetCurrentPuzzle(){
+        this.selectedCharacter = null;
+        this.loadPuzzle();
+    }
+
     nextPuzzle(){
         this.currentPuzzle++;
         this.loadPuzzle();
